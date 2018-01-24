@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<title>Login Page task 3</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function nameValidation(){
+valid = true;
+
+if(document.getElementById('pwd').value=="")
+	{
+	alert("Password should not be Empty.");
+	valid=false;
+	}
+if(document.getElementById('pwd').value.length>8)
+	{
+	alert("Password should be less than 8 characters.");
+	valid=false;
+	}
+	return valid;
+}
+</script>
+<script>
+$(function () { $('#pwd').keypress(function (e) { 
+	
+	var key = e.which || e.keyCode ; 
+		if ((key >=33 && key <=47) || (key >=58 && key <=64) || (key >=91 && key<=96) || (key >=123 && key<=126) ) {
+			alert("Special Charters are not allowed");
+			return false;
+		}
+		}); 
+});
+
+
+</script>
+
+</head>
+<body>
+<div class="container">
+<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="col-sm-5 well"><h3 style="margin-left: 1.0em;margin-bottom:-10px;"><b> Login to your Account</b></h3>
+	<hr style="border-top: 1px solid #8c8b8b;">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-11" style="margin-top:-10px;">
+					<form class="form-horizontal" action="mailto:shaikhchand724@gmail.com.com" method="post" enctype="text/plain" onsubmit="return nameValidation();" >
+					  <div class="form-group">
+						<label class="control-label col-sm-3" for="email">User name</label>
+						<div class="col-sm-7">
+						  <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+						</div>
+					  </div>
+					  <div class="form-group" >
+						<label class="control-label col-sm-3" for="pwd">Password:</label>
+						<div class="col-sm-7"> 
+						  <input type="password" name="pwd" class="form-control" id="pwd" title="Password field should not allow empty values, Special characters or more than 8 characters to be entered." placeholder="Enter Password" required>
+						</div>
+					  </div>
+					  <div class="form-group"> 
+						<div class="col-sm-offset-3 col-sm-9">
+						  <button type="submit" class="btn btn-primary btn-sm" id="bt1">  <p style="margin-left:15px;margin-right:15px;margin-top:2px;margin-bottom:2px;">Sign in </button><a href="https://sokrati.com/" target="_blank"> Forgot Password ?</a>
+						</div>
+					  </div>
+					</form></br><p align="right">Powered by Sokrati</p>
+		</div>
+		</div>
+		<div class="col-sm-3"></div>
+</div>
+</div>
+
+</body>
+</html>
